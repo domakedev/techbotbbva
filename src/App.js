@@ -11,9 +11,11 @@ import React, { Fragment } from "react";
 function App() {
   return (
     <Fragment>
+      <div>
       <Header></Header>
       <LandingMain></LandingMain>
       <Footer></Footer>
+      </div>
     </Fragment>
   );
 }
