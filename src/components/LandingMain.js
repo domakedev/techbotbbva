@@ -4,7 +4,7 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 
 //Import Theme
-import { Colores } from "../Theme.js";
+//import { Colores } from "../Theme.js";
 
 //Import Layouts
 import Header from "../layout/Header";
@@ -42,18 +42,18 @@ const LandingMainStyled = styled.main`
   }
 `;
 
-const ButtonAccionHero = styled.button`
-  background-color: ${Colores.azulOscuro};
-  color: ${Colores.blanco};
-  margin-left: 20px;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  margin-top: 50px;
-  font-size: 2rem;
-`;
+// const ButtonAccionHero = styled.button`
+//   background-color: ${Colores.azulOscuro};
+//   color: ${Colores.blanco};
+//   margin-left: 20px;
+//   padding: 10px;
+//   border-radius: 5px;
+//   border: none;
+//   outline: none;
+//   cursor: pointer;
+//   margin-top: 50px;
+//   font-size: 2rem;
+// `;
 
 const LandingMain = () => {
   return (
