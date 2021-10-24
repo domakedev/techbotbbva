@@ -9,7 +9,7 @@ import styled from "styled-components";
 import { Colores } from "../../Theme";
 
 //Link para comunicacion
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 const ConainterStyled = styled.div`
   display: flex;
