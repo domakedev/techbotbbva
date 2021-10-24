@@ -7,17 +7,25 @@ import styled from "styled-components";
 import { Colores } from "../Theme.js";
 
 //Link para comunicacion
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const LinkStyled = styled(Link)`
- background-color: ${Colores.azulOscuro};
+  background-color: ${Colores.azulOscuro};
   color: ${Colores.blanco};
   padding: 10px;
   border-radius: 5px;
   border: none;
   outline: none;
   cursor: pointer;
-  text-decoration:none;
+  text-decoration: none;
+`;
+const LinkStyledLogin = styled(Link)`
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
 `;
 
 const HeaderNav = styled.div`
@@ -68,7 +76,9 @@ const Header = () => {
         <ButtonPrincipal>
           <LinkStyled to={"/nueva-cuenta"}>Quiero conocer mas!</LinkStyled>
         </ButtonPrincipal>
-        <ButtonSecundario>Iniciar Sesion</ButtonSecundario>
+        <ButtonSecundario>
+          <LinkStyledLogin to={"/login"}>Iniciar Sesion</LinkStyledLogin>
+        </ButtonSecundario>
       </Botones>
     </HeaderNav>
   );

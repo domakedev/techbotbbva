@@ -1,13 +1,15 @@
-import React, { useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 
 import authContext from "../../context/autenticacion/authContext";
-
 
 //Import StyledComponents
 import styled from "styled-components";
 
 //Import Theme
 import { Colores } from "../../Theme";
+
+//Link para comunicacion
+import { Link } from "react-router-dom";
 
 const ConainterStyled = styled.div`
   display: flex;
@@ -25,7 +27,7 @@ const LoginStyled = styled.div`
   align-items: center;
   background-color: white;
   border-radius: 10px;
-  padding: 50px;
+  padding: 30px 40px;
 `;
 
 const Title = styled.h1`
@@ -50,6 +52,13 @@ const Input = styled.input`
   padding: 10px;
 `;
 
+const TextoIniciarSesion = styled.p`
+  color: ${Colores.azulOscuro};
+  margin-bottom: 20px;
+  text-decoration: underline;
+  font-size: 1.5rem;
+  margin-top: 10px;
+`;
 const ButtonCrearCuenta = styled.button`
   background-color: ${Colores.azulOscuro};
   color: ${Colores.blanco};
@@ -63,15 +72,22 @@ const ButtonCrearCuenta = styled.button`
   cursor: pointer;
 `;
 
-const Register = (props) => {
+const LinkStyled = styled(Link)`
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration:none;
+`;
 
+const Register = (props) => {
   //Config context de auth para traer states y funciones
   const {
     //States
     //Funciones
-    registrarUsuario
+    registrarUsuario,
   } = useContext(authContext);
-
 
   const [usuario, guardarUsuario] = useState({
     name: "",
@@ -79,36 +95,34 @@ const Register = (props) => {
     password: "",
   });
 
-  const { name, email, password} = usuario;
-
+  const { name, email, password } = usuario;
 
   const onChange = (e) => {
-    const value = e.target.value
-    const name = e.target.name
+    const value = e.target.value;
+    const name = e.target.name;
 
     guardarUsuario({
-        ...usuario,
-        [ name ]: value,
-    })
-}
+      ...usuario,
+      [name]: value,
+    });
+  };
 
   const onSubmit = () => {
     //Comprobar que no esten vacio los datos del usuario
-    if (usuario.name.trim() === "" || usuario.email.trim() === "" || usuario.password.trim() === "") {
+    if (
+      usuario.name.trim() === "" ||
+      usuario.email.trim() === "" ||
+      usuario.password.trim() === ""
+    ) {
       //controlarAlerta("No dejes campos vacios", "alerta-error");
-      alert("Please no dejes campos vacios")
+      alert("Please no dejes campos vacios");
       return;
     }
 
-    //Enviar datos a App principal
-    //iniciarSesion({ email, password });
-    //alert("Completaste los datos correctamente")
 
     //Enviar datos a App principal, pasarlo al Action!
     console.log(usuario);
-    registrarUsuario({ name, email, password});
-
-   
+    registrarUsuario({ name, email, password });
   };
 
   return (
@@ -117,44 +131,48 @@ const Register = (props) => {
         <Title>Registrate</Title>
 
         <Label htmlFor="name">
-          Nombre <Input 
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Tu nombre"
-                    value={usuario.name}
-                    onChange={onChange}
-        
-                    />
+          Nombre{" "}
+          <Input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Tu nombre"
+            value={usuario.name}
+            onChange={onChange}
+          />
         </Label>
 
         <Label htmlFor="email">
-          Email <Input 
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Tu email"
-                    value={usuario.email}
-                    onChange={onChange}
-        
-                    />
+          Email{" "}
+          <Input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Tu email"
+            value={usuario.email}
+            onChange={onChange}
+          />
         </Label>
 
-         <Label htmlFor="password">
-         Password <Input 
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder="Tu password"
-                    value={usuario.password}
-                    onChange={onChange}
-        
-                    />
+        <Label htmlFor="password">
+          Password{" "}
+          <Input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Tu password"
+            value={usuario.password}
+            onChange={onChange}
+          />
         </Label>
 
         <ButtonCrearCuenta onClick={() => onSubmit()}>
           Crear Cuenta
         </ButtonCrearCuenta>
+
+        <TextoIniciarSesion>
+          <LinkStyled to={"/login"}>Iniciar Sesion</LinkStyled>
+        </TextoIniciarSesion>
       </LoginStyled>
     </ConainterStyled>
   );
