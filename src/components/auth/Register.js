@@ -1,4 +1,7 @@
-import React, { Fragment, useState } from "react";
+import React, { useState, useContext, useEffect, Fragment } from "react";
+
+import authContext from "../../context/autenticacion/authContext";
+
 
 //Import StyledComponents
 import styled from "styled-components";
@@ -60,12 +63,24 @@ const ButtonCrearCuenta = styled.button`
   cursor: pointer;
 `;
 
-const Register = () => {
+const Register = (props) => {
+
+  //Config context de auth para traer states y funciones
+  const {
+    //States
+    //Funciones
+    registrarUsuario
+  } = useContext(authContext);
+
+
   const [usuario, guardarUsuario] = useState({
     name: "",
     email: "",
     password: "",
   });
+
+  const { name, email, password} = usuario;
+
 
   const onChange = (e) => {
     const value = e.target.value
@@ -87,8 +102,11 @@ const Register = () => {
 
     //Enviar datos a App principal
     //iniciarSesion({ email, password });
-    alert("Completaste los datos correctamente")
+    //alert("Completaste los datos correctamente")
 
+    //Enviar datos a App principal, pasarlo al Action!
+    console.log(usuario);
+    registrarUsuario({ name, email, password});
 
    
   };

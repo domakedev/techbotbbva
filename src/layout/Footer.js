@@ -21,7 +21,7 @@ const FooterStyled = styled.div`
 const Footer = () => {
   return (
     <FooterStyled>
-      <p class="footer_text">Creado con pasion por el equipo de TechBot.🤟🦾</p>
+      <p>Creado con pasion por el equipo de TechBot.🤟🦾</p>
     </FooterStyled>
   );
 };

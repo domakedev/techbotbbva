@@ -10,20 +10,24 @@ import Landing from "./components/LandingMain";
 //import logo from "./logo.svg";
 import "./App.css";
 
-
-
-
+//authContextState
+import AuthState from "./context/autenticacion/authState";
 
 
 function App() {
+
+  console.log(process.env.REACT_APP_BACKEND_URL);
+
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Landing} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/nueva-cuenta" component={Register} />
-      </Switch>
-    </Router>
+    <AuthState>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/nueva-cuenta" component={Register} />
+        </Switch>
+      </Router>
+    </AuthState>
   );
 }
 
