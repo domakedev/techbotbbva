@@ -52,13 +52,14 @@ const Input = styled.input`
   padding: 10px;
 `;
 
-const TextoIniciarSesion = styled.p`
-  color: ${Colores.azulOscuro};
-  margin-bottom: 20px;
-  text-decoration: underline;
-  font-size: 1.5rem;
-  margin-top: 10px;
-`;
+// const TextoIniciarSesion = styled.p`
+//   color: ${Colores.azulOscuro};
+//   margin-bottom: 20px;
+//   text-decoration: underline;
+//   font-size: 1.5rem;
+//   margin-top: 10px;
+// `;
+
 const ButtonCrearCuenta = styled.button`
   background-color: ${Colores.azulOscuro};
   color: ${Colores.blanco};
@@ -72,14 +73,14 @@ const ButtonCrearCuenta = styled.button`
   cursor: pointer;
 `;
 
-const LinkStyled = styled(Link)`
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  text-decoration: none;
-`;
+// const LinkStyled = styled(Link)`
+//   padding: 10px;
+//   border-radius: 5px;
+//   border: none;
+//   outline: none;
+//   cursor: pointer;
+//   text-decoration: none;
+// `;
 
 const Login = (props) => {
   //Config context de auth para traer states y funciones
