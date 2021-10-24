@@ -11,13 +11,13 @@ import Header from "../layout/Header";
 import Footer from "../layout/Footer";
 
 //Link para comunicacion
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 
 
-const ContainerMain = styled.main`
-  display: flex;
-  flex-direction: column;
-`;
+// const ContainerMain = styled.main`
+//   display: flex;
+//   flex-direction: column;
+// `;
 
 const LandingMainStyled = styled.main`
   height: calc(100vh - 200px);
