@@ -67,17 +67,23 @@ const Botones = styled.div`
   align-items: center;
 `;
 
-const Header = () => {
+const Header = ({autenticado}) => {
   return (
     <HeaderNav>
       <Logo src="https://cdn.worldvectorlogo.com/logos/bbva-2019.svg"></Logo>
 
       <Botones>
         <ButtonPrincipal>
+          {autenticado ? 
+          <LinkStyled to={"/dashboard"}>Dashboard</LinkStyled>         
+          :  
           <LinkStyled to={"/nueva-cuenta"}>Quiero conocer mas!</LinkStyled>
+        }
         </ButtonPrincipal>
         <ButtonSecundario>
+          {autenticado ?<LinkStyledLogin to={"/"}>Cerrar Sesion</LinkStyledLogin> : 
           <LinkStyledLogin to={"/login"}>Iniciar Sesion</LinkStyledLogin>
+        }
         </ButtonSecundario>
       </Botones>
     </HeaderNav>

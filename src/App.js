@@ -7,6 +7,8 @@ import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Landing from "./components/LandingMain";
 import Dashboard from "./components/dashboard/Dashboard"
+import Transacciones from "./components/Transacciones"
+import Cursos from "./components/Cursos"
 
 //import logo from "./logo.svg";
 import "./App.css";
@@ -27,6 +29,8 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/nueva-cuenta" component={Register} />
           <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/transacciones" component={Transacciones} />
+          <Route exact path="/cursos" component={Cursos} />
         </Switch>
       </Router>
     </AuthState>

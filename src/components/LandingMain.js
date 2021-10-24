@@ -10,6 +10,7 @@ import { Colores } from "../Theme.js";
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";
 
+import edificios from "../Images/edificios.jpg"
 //Link para comunicacion
 //import { Link } from 'react-router-dom'
 
@@ -21,19 +22,24 @@ import Footer from "../layout/Footer";
 
 const LandingMainStyled = styled.main`
   height: calc(100vh - 200px);
-  background-image: url("https://i.blogs.es/37ba66/trabajar-en-el-campo/650_1200.jpg");
+  background-image: url(${edificios});
   background-color: #cccccc;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 2.5rem;
+  font-size: 5rem;
   text-align: center;
+  & h1{
+  filter: brightness(100%);
+  };
+  & p{
+    font-weight: bold;
+  }
 `;
 
 const ButtonAccionHero = styled.button`
@@ -54,11 +60,9 @@ const LandingMain = () => {
     <Fragment>
         <Header></Header>
       <LandingMainStyled>
-        <h1>Bienvenido!</h1>
-        <p>Desubre la mejor tecnologia para tu agronegocio</p>
+        <h1>Bienvenido</h1>
+        <p>A la cuenta 100% digital para tu negocio!</p>
 
-        <ButtonAccionHero>
-        </ButtonAccionHero>
 
 
 

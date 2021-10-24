@@ -78,7 +78,17 @@ const LinkStyled = styled(Link)`
   border: none;
   outline: none;
   cursor: pointer;
-  text-decoration:none;
+  text-decoration: none;
+`;
+
+const LinkStyled2 = styled(Link)`
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
 `;
 
 const Register = (props) => {
@@ -115,10 +125,9 @@ const Register = (props) => {
       usuario.password.trim() === ""
     ) {
       //controlarAlerta("No dejes campos vacios", "alerta-error");
-      alert("Please no dejes campos vacios");
+      //alert("Please no dejes campos vacios");
       return;
     }
-
 
     //Enviar datos a App principal, pasarlo al Action!
     console.log(usuario);
@@ -167,7 +176,7 @@ const Register = (props) => {
         </Label>
 
         <ButtonCrearCuenta onClick={() => onSubmit()}>
-          Crear Cuenta
+          <LinkStyled2 to={"/dashboard"}> Crear Cuenta</LinkStyled2>
         </ButtonCrearCuenta>
 
         <TextoIniciarSesion>

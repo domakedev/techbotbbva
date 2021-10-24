@@ -56,10 +56,11 @@ const DHero = () => {
         <HeroLogo></HeroLogo>
         <DataPrincipal>
           <span style={{ color: "steelblue", marginRight: "10px" }}>
-            Aricko
+            Sergio
           </span>{" "}
-          <span> correo@gmail.com</span> <br />
-          <span style={{ marginRight: "10px", fontSize: "1.5rem" }}>UX/UI</span>
+          <span> sergiocardenas@gmail.com</span> <br />
+          <span style={{ marginRight: "10px", fontSize: "1.5rem" }}>Ing. de software</span>
+          <span><b> DesarrolloGio Enterprise</b></span>
         </DataPrincipal>
       </HeroStyled>
     </Fragment>

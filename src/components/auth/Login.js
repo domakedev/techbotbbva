@@ -9,7 +9,7 @@ import styled from "styled-components";
 import { Colores } from "../../Theme";
 
 //Link para comunicacion
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ConainterStyled = styled.div`
   display: flex;
@@ -18,6 +18,16 @@ const ConainterStyled = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: ${Colores.verde};
+`;
+
+const LinkStyled = styled(Link)`
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
 `;
 
 const LoginStyled = styled.div`
@@ -151,7 +161,7 @@ const Login = (props) => {
         </Label>
 
         <ButtonCrearCuenta onClick={() => onSubmit()}>
-          Iniciar Sesion
+          <LinkStyled to={"/dashboard"}>Iniciar Sesion</LinkStyled>
         </ButtonCrearCuenta>
       </LoginStyled>
     </ConainterStyled>
