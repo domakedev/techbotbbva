@@ -16,7 +16,7 @@ import AuthState from "./context/autenticacion/authState";
 
 function App() {
 
-  console.log(process.env.REACT_APP_BACKEND_URL);
+  console.log(process.env.REACT_APP_API_KEY);
 
   return (
     <AuthState>

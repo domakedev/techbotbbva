@@ -37,8 +37,8 @@ const AuthState = (props) => {
 
     const registrarUsuario = async data => {
         try {
-            //console.log("Holis");
-            const respuesta = await clienteAxios.post('http://137.184.68.86/api/register', data)
+            console.log(process.env.REACT_APP_API_KEY);
+            const respuesta = await clienteAxios.post('/api/register', data)
 
             console.log("Usuario creado",respuesta.data);
 
