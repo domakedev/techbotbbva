@@ -1,10 +1,23 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 //Import StyledComponents
 import styled from "styled-components";
 
 //Import Theme
 import { Colores } from "../Theme.js";
+
+//Import Layouts
+import Header from "../layout/Header";
+import Footer from "../layout/Footer";
+
+//Link para comunicacion
+import { Link } from 'react-router-dom'
+
+
+const ContainerMain = styled.main`
+  display: flex;
+  flex-direction: column;
+`;
 
 const LandingMainStyled = styled.main`
   height: calc(100vh - 200px);
@@ -38,12 +51,20 @@ const ButtonAccionHero = styled.button`
 
 const LandingMain = () => {
   return (
-    <LandingMainStyled>
-      <h1>Bienvenido!</h1>
-      <p>Desubre la mejor tecnologia para tu agronegocio</p>
+    <Fragment>
+        <Header></Header>
+      <LandingMainStyled>
+        <h1>Bienvenido!</h1>
+        <p>Desubre la mejor tecnologia para tu agronegocio</p>
 
-      <ButtonAccionHero>Quiero conocer mas!</ButtonAccionHero>
-    </LandingMainStyled>
+        <ButtonAccionHero>
+        </ButtonAccionHero>
+
+
+
+      </LandingMainStyled>
+      <Footer></Footer>
+    </Fragment>
   );
 };
 

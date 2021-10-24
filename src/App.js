@@ -1,30 +1,29 @@
 import React, { Fragment } from "react";
 
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+//Importar auth componentes
+import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
+import Landing from "./components/LandingMain";
+
 //import logo from "./logo.svg";
 import "./App.css";
 
-//Import Layouts
-import Header from "./layout/Header";
-import Footer from "./layout/Footer";
-import LandingMain from "./components/LandingMain";
 
-//Import StyledComponents
-import styled from "styled-components";
 
-const ContainerMain = styled.main`
-  display: flex;
-  flex-direction: column;
-`;
+
+
 
 function App() {
   return (
-    <Fragment>
-      <ContainerMain>
-        <Header></Header>
-        <LandingMain></LandingMain>
-        <Footer></Footer>
-      </ContainerMain>
-    </Fragment>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/nueva-cuenta" component={Register} />
+      </Switch>
+    </Router>
   );
 }
 
